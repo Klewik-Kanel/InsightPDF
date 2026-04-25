@@ -7,6 +7,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain_google_genai import ChatGoogleGenerativeAI, HarmBlockThreshold, HarmCategory
+
 
 # --- 1. CONFIGURATION & API KEY ---
 st.set_page_config(page_title="InsightPDF", page_icon="📄")
@@ -60,7 +62,16 @@ if u_file:
         Question: {question}"""
         
         prompt = ChatPromptTemplate.from_template(template)
-        model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
+        model = ChatGoogleGenerativeAI(
+            model="models/gemini-1.5-flash",
+            temperature=0.2,
+            safety_settings={
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                }
+        )
 
         chain = (
             {"context": retriever, "question": RunnablePassthrough()}
