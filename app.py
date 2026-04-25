@@ -33,7 +33,7 @@ if api_key:
             pages = loader.load_and_split()
             
             # Create Vector Store
-            embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+            embeddings = GoogleGenerativeAIEmbeddings(model="embedding-001")
             vector_index = FAISS.from_documents(pages, embeddings)
             retriever = vector_index.as_retriever()
 
