@@ -9,8 +9,8 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 # --- 1. CONFIGURATION ---
-st.set_page_config(page_title="InsightPDF", page_icon="📄")
-st.title("InsightPDF 📄")
+st.set_page_config(page_title="InsightPDF")
+st.title("InsightPDF ")
 
 api_key = st.secrets.get("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
