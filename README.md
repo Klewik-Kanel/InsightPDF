@@ -21,7 +21,7 @@ https://insightpdf-l2wejfywbnxdnkzdxgjupy.streamlit.app
 5. **Generation:** The LLM reads the context chunks and generates a grounded, hallucination-free answer.
 
 ## 🛠️ Local Setup
-1. Clone the repo: `git clone [Your Repo Link]`
+1. Clone the repo: `git clone https://github.com/Klewik-Kanel/InsightPDF`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Add your `GOOGLE_API_KEY` to a `.env` file.
 4. Run: `streamlit run app.py`
