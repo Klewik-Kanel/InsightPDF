@@ -3,7 +3,7 @@
 An end-to-end Retrieval-Augmented Generation (RAG) application that allows users to chat with PDF documents using Google's Gemini 1.5 Flash and FAISS vector search.
 
 ## 🚀 Live Demo
-[Insert your Streamlit Cloud Link Here]
+https://insightpdf-l2wejfywbnxdnkzdxgjupy.streamlit.app
 
 ## 🛠️ Tech Stack
 - **Framework:** Streamlit (UI)
